@@ -1,0 +1,164 @@
+
+// header
+.header{
+    background: #111111;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100000;
+
+    transition: all linear .4s;
+
+    .navbar{
+        background-color: transparent;
+        border: 0px;
+        border-radius: 0px;
+        margin-bottom: 0;
+
+        .navbar-brand{
+            color: #fff;
+            text-transform: uppercase;
+            font-family: OSBold;
+        }
+
+        .navbar-nav{
+            a{
+                color: #fff;
+                text-transform: uppercase;
+                border-bottom: 3px solid transparent;
+                transition: all ease-in-out .3s;
+                font-family: OSLight;
+
+                &:hover{
+                    border-bottom: 3px solid #fcac45;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:768px){
+        .navbar{
+            .nav{
+                a{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// footer 
+.footer{
+    padding: 4em 0;
+    .container{
+        .content{
+            display: flex;
+            justify-content: space-between;
+
+            .left{
+                color: #b2b2b2;
+                line-height: 39px;
+            }
+
+            .right{
+                display: flex;
+                justify-content: space-between;
+                width: 24%;
+
+                .icon{
+                    border: 4px solid #b2b2b2;
+                    border-radius: 100%;
+                    cursor: pointer;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:1000px){
+        &{
+            .container{
+                .content{
+                    flex-wrap: wrap;
+
+                    .left{
+                        margin-bottom: 1.5em;
+                        margin: 0 auto;
+                    }
+
+                    .right{
+                        width: 63%;
+                        margin: 0 auto;
+
+                        .icon{
+                            margin-top: 1.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:470px){
+        &{
+            .container{
+                .content{
+                    .left{
+                        font-size: .8em;
+                    }
+
+                    .right{
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#gotop{
+    position: fixed;
+    bottom: 90px;
+    right: 0;
+    width: 80px;
+    cursor: pointer;
+    z-index: -100000;
+    opacity: 0;
+
+    transition: all linear .4s;
+
+    &:hover {
+        animation: rubberBand 1s;
+    }
+
+    @keyframes rubberBand {
+        from {
+          transform: scale3d(1, 1, 1);
+        }
+      
+        30% {
+          transform: scale3d(1.25, 0.75, 1);
+        }
+      
+        40% {
+          transform: scale3d(0.75, 1.25, 1);
+        }
+      
+        50% {
+          transform: scale3d(1.15, 0.85, 1);
+        }
+      
+        65% {
+          transform: scale3d(.95, 1.05, 1);
+        }
+      
+        75% {
+          transform: scale3d(1.05, .95, 1);
+        }
+      
+        to {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+}
